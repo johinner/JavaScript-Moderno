@@ -1,4 +1,6 @@
 import {crearDeck} from "./usecases/crear-deck"
+import pedirCarta from "./usecases/pedir-carta"
+import valorCarta from "./usecases/valor-carta"
 
 const miModulo = (() => {
   "use strict"
@@ -31,24 +33,6 @@ const miModulo = (() => {
       $btnDetener.disabled = false
   }
 
-  
-
-  //Esta funcion permite tomar una carta
-  const pedirCarta = () => {
-
-      if (deck.length === 0) throw "No hay cartas en el deck"
-      return deck.pop()
-
-      /* let aleatorio = Math.floor(Math.random() * (deck.length +1)); 
-      deck.splice(aleatorio, 1);*/
-  }
-
-  //Esta funcion determina el valor de cada carta
-  const valorCarta = (carta) => {
-      const valor = carta.substring(0, carta.length - 1)
-      return isNaN(valor) ? (valor === "A") ? 11 : 10 : valor * 1;
-  }
-
   //Turno: 0 = primer jugador y el ultimo sera la computadora
   const acumularPuntos = (carta, turno) => {
       puntosJugadores[turno] = puntosJugadores[turno] + valorCarta(carta);
@@ -78,7 +62,7 @@ const miModulo = (() => {
   const turnoComputadora = (puntosMinimos) => {
       let puntosComputadora = 0;
       do {
-          const carta = pedirCarta()
+          const carta = pedirCarta(deck)
           puntosComputadora = acumularPuntos(carta, puntosJugadores.length - 1);
 
 
@@ -92,7 +76,7 @@ const miModulo = (() => {
 
   //Eventos
   $btnPedir.addEventListener('click', () => {
-      const carta = pedirCarta()
+      const carta = pedirCarta(deck)
       const puntosJugador = acumularPuntos(carta, 0)
 
       crearCarta(carta, 0)

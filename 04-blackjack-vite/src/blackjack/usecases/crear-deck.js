@@ -2,8 +2,8 @@ import _ from 'underscore';
 
 /**
  * Esta funcion crea una nueva baraja
- * @param {array<String>} tiposDeCarta Ejemplo: ["C", "D", "H", "S"]
- * @param {array<String>} tiposEspeciales Ejemplo: ["J", "K", "Q", "A"]
+ * @param {array <String>} tiposDeCarta Ejemplo: ["C", "D", "H", "S"]
+ * @param {array <string>} tiposEspeciales Ejemplo: ["J", "K", "Q", "A"]
  * @returns {array} Retorna un arreglo de cartas
  */
 
