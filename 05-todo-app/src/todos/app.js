@@ -11,7 +11,7 @@ const ElementIDs = {
 }
 
 /**
- * 
+ *
  * @param {String} elementId 
  */
 
