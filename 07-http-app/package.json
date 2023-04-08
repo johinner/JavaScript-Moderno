@@ -7,9 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "host": "vite --host"
+    "host": "vite --host",
+    "server": "json-server server/db.json --host 192.168.43.150 --port 3001"
   },
   "devDependencies": {
+    "json-server": "^0.17.3",
     "vite": "^4.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }

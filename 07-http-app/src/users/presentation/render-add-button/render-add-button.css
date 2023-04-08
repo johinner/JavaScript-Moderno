@@ -1,0 +1,10 @@
+.fab-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid black;
+}
+.fab-button:hover{
+    background-color: rgba(0, 0, 255, 0.205);
+}
