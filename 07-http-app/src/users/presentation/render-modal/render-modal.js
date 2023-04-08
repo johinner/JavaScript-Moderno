@@ -64,13 +64,21 @@ export const renderModald = (element, saveUserCallback) => {
         const formData = new FormData(form);
         const userLike = { ...loadedUser };
 
+        console.log(formData)
+
         for (const [key, value] of formData) {
+
             if (key === 'balance') {
                 userLike[key] = +value;
                 continue;
             }
             if (key === 'isActive') {
                 userLike[key] = (value === 'on') ? true : false;
+                continue;
+            }
+            //TODO: solucion cambiar active a false
+            if (key !== 'isActive'){
+                userLike["isActive"] = false
                 continue;
             }
             userLike[key] = value;
